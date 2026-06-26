@@ -544,6 +544,12 @@
     const grid = qs(".projects-grid");
     if (!grid || !projects.length) return;
 
+    projects.sort((a, b) => {
+      const af = String(a.featured || a.is_featured || "").toUpperCase() === "TRUE";
+      const bf = String(b.featured || b.is_featured || "").toUpperCase() === "TRUE";
+      return Number(bf) - Number(af);
+    });
+
     grid.innerHTML = projects
       .map((proj) => {
         const isData = proj.is_data === "TRUE" || proj.is_data === "true";
@@ -565,8 +571,12 @@
          </div>`
           : "";
 
+        const isFeatured =
+          String(proj.featured || proj.is_featured || "").toUpperCase() === "TRUE";
+
         return `
-      <article class="project-card ${isData ? "data" : ""} reveal" role="listitem">
+      <article class="project-card ${isData ? "data" : ""} ${isFeatured ? "featured" : ""} reveal" role="listitem">
+        ${isFeatured ? '<span class="project-featured-label">Featured</span>' : ""}
         <span class="project-type-badge ${badgeClass}">${esc(proj.badge_label || "")}</span>
         <h3 class="project-title">${esc(proj.title || "")}</h3>
         <p class="project-summary">${esc(proj.summary || "")}</p>
@@ -672,6 +682,10 @@
     const introEl = qs("#contact-intro");
     if (introEl && kv.intro) introEl.textContent = kv.intro;
 
+    /* ── Inject availability / open-to line ── */
+    const openToEl = qs("#contact-open-to");
+    if (openToEl && kv.open_to) openToEl.textContent = kv.open_to;
+
     /* ── Inject section heading ── */
     const headingEl = qs("#contact-heading");
     if (headingEl && kv.heading) headingEl.textContent = kv.heading;
@@ -682,8 +696,12 @@
     if (formHeadEl && kv.form_heading) formHeadEl.textContent = kv.form_heading;
     if (formSubEl && kv.form_subtext) formSubEl.textContent = kv.form_subtext;
 
-    /* ── Update CV button ── */
+    /* ── Update CV card/button ── */
     const cvBtn = qs("#contact-cv-btn");
+    const cvTitleEl = qs("#contact-cv-title");
+    const cvSubEl = qs("#contact-cv-subtext");
+    if (cvTitleEl && kv.cv_title) cvTitleEl.textContent = kv.cv_title;
+    if (cvSubEl && kv.cv_subtext) cvSubEl.textContent = kv.cv_subtext;
     if (cvBtn) {
       if (kv.cv_url) cvBtn.setAttribute("href", kv.cv_url);
       if (kv.cv_label) cvBtn.textContent = kv.cv_label;

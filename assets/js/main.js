@@ -249,7 +249,7 @@ const reducedMotion = window.matchMedia(
 
 /* 7. TYPEWRITER */
 (function () {
-  if (reducedMotion) return;
+  if (reducedMotion || isMobile()) return;
   const el = qs(".hero-title");
   if (!el) return;
   const txt = el.textContent.trim();
@@ -269,7 +269,7 @@ const reducedMotion = window.matchMedia(
 
 /* 8. PARTICLES */
 (function initParticles() {
-  if (reducedMotion) return;
+  if (reducedMotion || isMobile()) return;
   const canvas = qs("#hero-canvas");
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
@@ -491,10 +491,22 @@ const reducedMotion = window.matchMedia(
     feedback.style.display = "none";
     feedback.textContent = "";
   }
-  function showSuccess() {
+  function showSuccess(name) {
     if (header) header.style.display = "none";
     form.style.display = "none";
     if (successEl) {
+      const titleEl = qs("#cf-success-title", successEl);
+      const subEl = qs("#cf-success-sub", successEl);
+      const cleanName = String(name || "").trim().split(/\s+/)[0];
+      if (titleEl) {
+        titleEl.textContent = cleanName
+          ? `Thank you for your message, ${cleanName}.`
+          : "Thank you for your message.";
+      }
+      if (subEl) {
+        subEl.textContent =
+          "Your message has been received successfully. I appreciate you reaching out and will review it carefully before getting back to you.";
+      }
       successEl.hidden = false;
       requestAnimationFrame(() =>
         requestAnimationFrame(() =>
@@ -558,7 +570,7 @@ const reducedMotion = window.matchMedia(
     })
       .then(function (r) {
         if (r.ok) {
-          showSuccess();
+          showSuccess(nameVal);
         } else {
           return r
             .json()
@@ -588,7 +600,7 @@ const reducedMotion = window.matchMedia(
         showFeedback(
           err && err.message && err.message !== "server"
             ? "✗ " + err.message
-            : "✗ Something went wrong. Email: roshanxshrestha@gmail.com",
+            : "The form could not be submitted right now. Please email me directly at roshanxshrestha@gmail.com.",
           true,
         );
       });
