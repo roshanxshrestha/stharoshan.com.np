@@ -1,0 +1,10 @@
+/* TEAM */
+  Name: Roshan Shrestha
+  Location: Kathmandu, Nepal
+  Email: roshanxshrestha@gmail.com
+  LinkedIn: https://www.linkedin.com/in/roshanxshrestha/
+  GitHub: https://github.com/roshanxshrestha
+/* SITE */
+  URL: https://stharoshan.com.np
+  Last update: 2026-06-21
+  Standards: HTML5, CSS3, ES6+
