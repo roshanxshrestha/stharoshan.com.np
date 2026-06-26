@@ -879,6 +879,9 @@
     if (typeof reinitScrollReveal === "function") {
       reinitScrollReveal();
     }
+
+    // Refresh mobile Read more / See more controls after dynamic content injection.
+    window.dispatchEvent(new CustomEvent("sheets:content-loaded"));
   }
 
   /* ─── LOADING INDICATOR CSS (injected at runtime) ────────────*/
