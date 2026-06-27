@@ -12,7 +12,7 @@
     />
     <meta
       name="keywords"
-      content="Roshan Shrestha, Data Analyst Nepal, Data Analyst Kathmandu, Junior Data Analyst Nepal, Entry-Level Data Analyst, Excel Dashboard Analyst, SQL Portfolio, Data Analytics Student Nepal, Roshan Shrestha Kathmandu, roshanxshrestha, stharoshan, SQL analyst Nepal, Excel analyst Nepal, Islington College data analytics, BSc CSIT Nepal, data analyst portfolio Nepal, junior business development manager Nepal"
+      content="Roshan Shrestha, Data Analyst Nepal, Data Analyst Kathmandu, Roshan Shrestha Kathmandu, roshanxshrestha, stharoshan, SQL analyst Nepal, Excel analyst Nepal, Islington College data analytics, BSc CSIT Nepal, data analyst portfolio Nepal, junior business development manager Nepal"
     />
     <meta name="author" content="Roshan Shrestha" />
     <meta
@@ -255,21 +255,17 @@
     </script>
 
     <!-- ═══ FAVICONS ═══ -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
     <link
       rel="icon"
-      href="./assets/images/favicon/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="icon"
-      href="./assets/images/favicon-192x192.png"
-      sizes="192x192"
+      href="./assets/images/favicon-32x32.png"
+      sizes="32x32"
       type="image/png"
     />
     <link
       rel="icon"
-      href="./assets/images/favicon-512x512.png"
-      sizes="512x512"
+      href="./assets/images/favicon-16x16.png"
+      sizes="16x16"
       type="image/png"
     />
     <link
@@ -638,10 +634,9 @@
               <div
                 class="about-photo-placeholder"
                 role="img"
-                aria-label="Professional profile photo placeholder"
+                aria-label="Profile photo placeholder"
               >
-                <span class="about-photo-initials">RS</span>
-                <span class="about-photo-caption">Profile photo</span>
+                [ Profile photo ]
               </div>
               <div class="about-badge" aria-hidden="true">
                 <div class="about-badge-label">Currently at</div>
@@ -881,7 +876,7 @@
 
           <div class="projects-grid" role="list" aria-label="Project portfolio">
             <!-- SYSTEM: Rudra Origins Operations -->
-            <article class="project-card data featured" role="listitem">
+            <article class="project-card data" role="listitem">
               <span class="project-type-badge badge-data"
                 >Operations System</span
               >
@@ -912,7 +907,7 @@
             </article>
 
             <!-- WEB: Maneuver Driving School -->
-            <article class="project-card featured" role="listitem">
+            <article class="project-card" role="listitem">
               <span class="project-type-badge badge-web"
                 >Web + Social (International)</span
               >
@@ -948,7 +943,7 @@
             </article>
 
             <!-- ECOMMERCE: Kicksy Nepal -->
-            <article class="project-card featured" role="listitem">
+            <article class="project-card" role="listitem">
               <span class="project-type-badge badge-web"
                 >E-Commerce · Founder</span
               >
@@ -1567,14 +1562,6 @@
                 out directly.
               </p>
 
-              <div class="contact-availability" id="contact-availability">
-                <span class="contact-availability-label">Open to</span>
-                <p id="contact-open-to">
-                  Junior data analyst roles, internships, freelance reporting dashboards,
-                  business data projects, and professional collaborations.
-                </p>
-              </div>
-
               <!-- Dynamic contact links — populated by sheets.js from the 'contact' tab.
              Static fallback links are shown until the sheet loads. -->
               <div
@@ -1647,14 +1634,7 @@
                 </div>
               </div>
 
-              <div class="contact-cv-card" id="contact-cv-card">
-                <div>
-                  <span class="contact-cv-kicker">Quick overview</span>
-                  <h3 id="contact-cv-title">Prefer a resume-style summary?</h3>
-                  <p id="contact-cv-subtext">
-                    Download the latest CV for education, experience, tools, and project highlights.
-                  </p>
-                </div>
+              <div style="margin-top: 1.5rem">
                 <a
                   href="./assets/pdf/RoshanShrestha_CV.pdf"
                   target="_blank"
@@ -1709,9 +1689,8 @@
                   id="cf-subject"
                   class="contact-field"
                   type="text"
-                  name="subject"
+                  name="_subject"
                   placeholder="Subject"
-                  required
                 />
                 <label for="cf-message" class="sr-only">Your message</label>
                 <textarea
@@ -1744,30 +1723,22 @@
               </form>
 
               <!-- Success state: hidden until form submits OK -->
-              <div id="cf-success" hidden aria-live="polite">
-                <div class="cf-success-inner">
-                  <div class="cf-success-icon" aria-hidden="true">
-                    <svg viewBox="0 0 52 52" class="cf-checkmark">
-                      <circle
-                        class="cf-checkmark-circle"
-                        cx="26"
-                        cy="26"
-                        r="24"
-                        fill="none"
-                      />
-                      <path
-                        class="cf-checkmark-tick"
-                        fill="none"
-                        d="M14 27l8 8 16-16"
-                      />
-                    </svg>
-                  </div>
-                  <p class="cf-success-kicker">Message received</p>
-                  <p class="cf-success-title" id="cf-success-title">Thank you for your message.</p>
-                  <p class="cf-success-sub" id="cf-success-sub">
-                    I appreciate you reaching out. Your message has been received successfully, and I will review it carefully before getting back to you.
+              <div id="cf-success" hidden>
+                <div style="text-align: center; padding: 2rem 1rem">
+                  <div style="font-size: 2.5rem; margin-bottom: 0.75rem">✓</div>
+                  <p
+                    style="
+                      font-size: 1rem;
+                      font-weight: 500;
+                      color: var(--ink);
+                      margin-bottom: 0.4rem;
+                    "
+                  >
+                    Message sent!
                   </p>
-                  <p class="cf-success-mono">Response will be sent to your email.</p>
+                  <p style="font-size: 0.875rem; color: var(--ink-3)">
+                    Thanks for reaching out — I'll get back to you soon.
+                  </p>
                 </div>
               </div>
             </div>
